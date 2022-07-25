@@ -1,0 +1,52 @@
+.forms {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid silver;
+    border-radius: 5px;
+    background-color: azure;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid silver;
+    border-radius: 5px;
+    min-width: 100px;
+    min-height: 150px;
+    margin: 5px;
+    padding-left: 30px;
+}
+.action-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.titled-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px;
+    padding: 5px;
+}
+
+form > button  {
+    width: 45%;
+    padding: 5px;
+    margin: 10px;
+
+}
+form > input {
+    width: 45%;
+    padding: 1px;
+}
+form > textarea{
+    width: 45%;
+}
+
+
+span {
+    font-family: "Roboto Light", serif;
+    font-style: italic;
+}
