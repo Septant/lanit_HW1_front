@@ -1,0 +1,57 @@
+body {
+    overflow: auto;
+}
+
+.url-list {
+    display: block;
+    width: 30%;
+    margin: 3% 0 0 2%;
+    padding: 1%;
+    background-color: aliceblue;
+    border: 1px solid silver;
+    border-radius: 5px;
+}
+
+.pics-container {
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 5%;
+    width: 90%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.url-list a {
+    text-decoration: none;
+}
+
+
+#helicopter {
+    width: 20%;
+    height: 25%;
+}
+
+#septant {
+    width: 20%;
+    height: 30%;
+}
+
+#beerfishing {
+    width: 300px;
+    height: 282px;
+}
+
+#medvedev {
+    width: 60%;
+    height: 100%;
+}
+
+#redacted {
+    width: 100%;
+    height: 258px;
+}
+
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="styles.css">
+    <title>FORMS-task</title>
+</head>
+<body>
+<div class="titled-text">
+    <p>Имена всех чётных форм:
+        <span id="evenList"></span>
+    </p>
+</div>
+<div class="forms">
+
+    <form name="form_1">
+        <div class="action-panel">
+            <button id="fName1" onclick="formNameButton(this.id)">Показать имя формы №1</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+
+        <div class="titled-text">
+            <label>E-mail: <input type="email" value=""></label>
+            <label>password: <input type="password"></label>
+        </div>
+    </form>
+
+    <form name="form_2">
+        <div class="action-panel">
+            <button id="fName2" onclick="formNameButton(this.id)">Показать имя формы №2</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <label>текстовое поле: <input type="text" value="Введите текст"></label>
+            <label>Число от 0 до 10: <input type="number" min="0" max="10"></label>
+            <label>Номер телефона: <input type="tel"
+                                          pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"></label>
+        </div>
+    </form>
+
+    <form name="form_3">
+        <div class="action-panel">
+            <button id="fName3" onclick="formNameButton(this.id)">Показать имя формы №3</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+
+        <div class="titled-text">
+            <label>Текстовое поле: <input type="text" value="Введите текст"></label>
+            <label>Поставить галочку:<input type="checkbox"></label>
+            <label>Дата: <input type="date"> </label>
+        </div>
+    </form>
+
+    <form name="form_4">
+        <div class="action-panel">
+            <button id="fName4" onclick="formNameButton(this.id)">Показать имя формы №4</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <label>Текстовое поле: <input type="text" value="Введите текст"></label>
+            <label>Текстовое поле: <input type="text" value="Введите текст"></label>
+            <label>Поле для абзаца: <textarea>Здесь можно написать абзац</textarea></label>
+        </div>
+    </form>
+
+    <form name="form_5">
+        <div class="action-panel">
+            <button id="fName5" onclick="formNameButton(this.id)">Показать имя формы №5</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <label>Кнопки:
+                <input type="radio" name="selectAnswer" value="yes">Да
+                <input type="radio" name="selectAnswer" value="no">Нет
+            </label>
+            <label>Текстовое поле: <input type="text" value="Введите текст"></label>
+            <label>Чекбоксы:</label> <span><input type="checkbox">Включить опцию 1</span>
+            <span><input type="checkbox">Включить опцию 2</span>
+        </div>
+    </form>
+
+    <form name="form_6">
+        <div class="action-panel">
+            <button id="fName6" onclick="formNameButton(this.id)">Показать имя формы №6</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <input type="text" value="Введите название колонки">
+            <textarea name="colon" cols="30"></textarea>
+        </div>
+    </form>
+
+    <form name="form_7">
+        <div class="action-panel">
+            <button id="fName7" onclick="formNameButton(this.id)">Показать имя формы №7</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <label>E-mail: <input type="email" value=""></label>
+            <label>password: <input type="password"></label>
+            <span>Чекбоксы:</span>
+            <label><input type="checkbox">Включить опцию 1</label>
+            <label><input type="checkbox">Включить опцию 2</label>
+            <label><input type="checkbox">Включить опцию 3</label>
+        </div>
+    </form>
+
+    <form name="form_8">
+        <div class="action-panel">
+            <button id="fName8" onclick="formNameButton(this.id)">Показать имя формы №8</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+
+        <div class="titled-text">
+            <label>Кнопки:
+                <input type="radio" name="selectAnswer" value="opt1">Опция1
+                <input type="radio" name="selectAnswer" value="opt2">Опция2
+                <input type="radio" name="selectAnswer" value="opt3">Опция3
+                <input type="radio" name="selectAnswer" value="opt4">Опция4
+            </label>
+        </div>
+    </form>
+
+    <form name="form_9">
+        <div class="action-panel">
+            <button id="fName9" onclick="formNameButton(this.id)">Показать имя формы №9</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <label>Выберите три цвета:</label>
+            <input type="color">
+            <input type="color">
+            <input type="color">
+            <input type="color">
+            <input type="color">
+            <input type="color">
+        </div>
+    </form>
+
+    <form name="form_10">
+        <div class="action-panel">
+            <button id="fName10" onclick="formNameButton(this.id)">Показать имя формы №10</button>
+            <button onclick="btnRelation(this.parentNode.parentNode.name)">Принадлежность</button>
+            <button onclick="fieldsNum(this.parentNode.parentNode.name)">Показать количество полей</button>
+            <input type="reset" value="Очистить">
+        </div>
+        <div class="titled-text">
+            <label>Ползунки, их можно двигать:</label>
+            <input type="range">
+            <input type="range">
+            <input type="range">
+            <input type="range">
+            <input type="range">
+            <input type="range">
+        </div>
+    </form>
+</div>
+
+
+<!--<form action="">
+    <label for="GET-name">Name:</label>
+    <input id="GET-name" type="text" name="name">
+    <input type="submit" value="Save">
+</form>
+<form action="" method="post">
+    <label for="POST-name">Name:</label>
+    <input id="POST-name" type="text" name="name">
+    <input type="submit" value="Save">
+</form>
+<form action="" method="post">
+    <fieldset>
+        <legend>Title</legend>
+        <input type="radio" name="radio" id="radio"> <label for="radio">Click me</label>
+    </fieldset>
+</form>-->
+<script src="script.js"></script>
+</body>
+</html>
