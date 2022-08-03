@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  color: hsl(235, 45%, 61%);
+  background-color: hsl(226, 43%, 10%);
+  margin-left: 15%;
+  margin-right: 15%;
+  @media(max-width: 1440px){
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+  @media (max-width:376px) {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+}
