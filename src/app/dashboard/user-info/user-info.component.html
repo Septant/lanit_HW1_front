@@ -1,0 +1,24 @@
+<div class="user-card">
+  <div class="user-card-content">
+    <div class="avatar">
+      <img src="/assets/images/image-jeremy.png"
+           alt="Photo of Jeremy">
+    </div>
+    <div class="user-card-text">
+      <h5>Report for</h5>
+      <p>Jeremy <br> Robson</p>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button mat-button (click)="changeActivityView(0)">
+      <span>Daily</span>
+    </button>
+    <button mat-button (click)="changeActivityView(1)">
+      <span>Weekly</span>
+    </button>
+    <button mat-button (click)="changeActivityView(2)">
+      <span>Monthly</span>
+    </button>
+  </div>
+</div>
