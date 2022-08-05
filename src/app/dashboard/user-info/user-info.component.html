@@ -11,13 +11,13 @@
   </div>
 
   <div class="actions">
-    <button mat-button (click)="changeActivityView(0)">
+    <button mat-button (click)="changeActivityView(ActivityType.DAILY)">
       <span>Daily</span>
     </button>
-    <button mat-button (click)="changeActivityView(1)">
+    <button mat-button (click)="changeActivityView(ActivityType.WEEKLY)">
       <span>Weekly</span>
     </button>
-    <button mat-button (click)="changeActivityView(2)">
+    <button mat-button (click)="changeActivityView(ActivityType.MONTHLY)">
       <span>Monthly</span>
     </button>
   </div>

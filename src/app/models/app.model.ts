@@ -1,7 +1,7 @@
 export interface Cards {
   type: string,
-  background_picture_path: string,
-  background_color: string
+  backgroundPicturePath: string,
+  backgroundColor: string
 }
 
 export interface ActivityData {
@@ -22,13 +22,21 @@ export interface ActivityData {
   }
 }
 
+export interface ShownData {
+  title: string;
+  period:{
+    current: number,
+    previous: number
+  }
+}
+
 export interface TitledText {
   title: string;
   text: string;
 }
 
-export enum activityType {
-  'daily' = 0,
-  'weekly' = 1,
-  'monthly' = 2
+export enum ActivityType {
+  DAILY = 'daily',
+  WEEKLY = 'weekly',
+  MONTHLY = 'monthly'
 }

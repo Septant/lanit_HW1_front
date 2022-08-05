@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Cards, ActivityData} from "../../models/app.model";
+import {ActivityData, ActivityType, Cards, ShownData} from "../../models/app.model";
 import {AppManager} from "../../managers/app.manager";
 import {Subscription} from "rxjs";
 
@@ -10,39 +10,76 @@ import {Subscription} from "rxjs";
 })
 export class CardsComponent implements OnInit, OnDestroy {
   cards: Cards[] = [
-    {type: 'work', background_picture_path: '/assets/images/icon-work.svg', background_color: 'hsl(15, 100%, 70%)'},
-    {type: 'play', background_picture_path: '/assets/images/icon-play.svg', background_color: 'hsl(195, 74%, 62%)'},
-    {type: 'study', background_picture_path: '/assets/images/icon-study.svg', background_color: 'hsl(348, 100%, 68%)'},
-    {type: 'exercise', background_picture_path: '/assets/images/icon-exercise.svg', background_color: 'hsl(145, 58%, 55%)'},
-    {type: 'social', background_picture_path: '/assets/images/icon-social.svg', background_color: 'hsl(264, 64%, 52%)'},
-    {type: 'self-Care', background_picture_path: '/assets/images/icon-self-care.svg', background_color: 'hsl(43, 84%, 65%)'}
+    {
+      type: 'work',
+      backgroundPicturePath: '/assets/images/icon-work.svg',
+      backgroundColor: 'hsl(15, 100%, 70%)'
+    },
+    {
+      type: 'play',
+      backgroundPicturePath: '/assets/images/icon-play.svg',
+      backgroundColor: 'hsl(195, 74%, 62%)'
+    },
+    {
+      type: 'study',
+      backgroundPicturePath: '/assets/images/icon-study.svg',
+      backgroundColor: 'hsl(348, 100%, 68%)'
+    },
+    {
+      type: 'exercise',
+      backgroundPicturePath: '/assets/images/icon-exercise.svg',
+      backgroundColor: 'hsl(145, 58%, 55%)'
+    },
+    {
+      type: 'social',
+      backgroundPicturePath: '/assets/images/icon-social.svg',
+      backgroundColor: 'hsl(264, 64%, 52%)'
+    },
+    {
+      type: 'self-Care',
+      backgroundPicturePath: '/assets/images/icon-self-care.svg',
+      backgroundColor: 'hsl(43, 84%, 65%)'
+    }
   ]
 
   dataSet: ActivityData[] = [];
+  ActivityType = ActivityType;
+  activityMode: ActivityType = ActivityType.DAILY;
   subscription: Subscription;
-  activityMode: number = 0;
+  selectedData: ShownData[] = [{title: 'none', period: {current: 0, previous: 0}}];
 
   constructor(private appManager: AppManager) {
     this.subscription = appManager.activity().subscribe(result => {
       if (result) {
         this.dataSet = result;
-        console.log('result:', this.dataSet);
+        this.resetData();
       }
     });
     this.subscription.add(appManager.activityMode$.subscribe(result => {
 
         this.activityMode = result;
-      console.log('mode:', this.activityMode);
+        this.resetData();
       }
     ));
   }
 
   ngOnInit(): void {
     this.appManager.getActivity();
+    this.resetData();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
+  resetData(): void {
+    this.selectedData = this.dataSet.map((data: any) => {
+      if (data) {
+        return {title: data.title, period: data.timeframes[this.activityMode]}
+      } else {
+        return {title: 'none', period: {current: 0, previous: 0}}
+      }
+    });
+  }
 }
+

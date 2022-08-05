@@ -3,8 +3,8 @@
   <div class="dash-card" *ngFor="let card of cards let i = index">
 
     <div class="dash-card-background-{{card.type}} dash-card-background"
-         [ngStyle]="{'background-color': card.background_color}">
-      <img [src]="card.background_picture_path" alt="there must be {{card.background_picture_path}}">
+         [ngStyle]="{'background-color': card.backgroundColor}">
+      <img [src]="card.backgroundPicturePath" alt="there must be {{card.backgroundPicturePath}}">
 
       <div class="dash-card-workflow">
         <div class="dash-header">
@@ -16,20 +16,12 @@
         </div>
         <div class="activity-info">
 
-          <div class="daily-activity" *ngIf="activityMode === 0">
-            <p class="actual-period">{{dataSet[i].timeframes.daily.current}}hrs</p>
-            <p class="last-period">Last day - {{dataSet[i].timeframes.daily.previous}}hrs</p>
-          </div>
-
-          <div class="weekly-activity" *ngIf="activityMode === 1">
-            <p class="actual-period">{{dataSet[i].timeframes.weekly.current}}hrs</p>
-            <p class="last-period">Last week - {{dataSet[i].timeframes.weekly.previous}}hrs</p>
-          </div>
-
-          <div class="monthly-activity" *ngIf="activityMode === 2">
-            <p class="actual-period">{{dataSet[i].timeframes.monthly.current}}hrs</p>
-            <p class="last-period">Last month - {{dataSet[i].timeframes.monthly.previous}}hrs</p>
-          </div>
+          <p class="actual-period" >
+            {{selectedData[i].period.current + 'hrs'}}
+          </p>
+          <p class="last-period">
+            {{'Last Period: ' + selectedData[i].period.previous}}
+          </p>
 
         </div>
       </div>

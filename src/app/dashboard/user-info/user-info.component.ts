@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {activityType} from "../../models/app.model";
+import {Component, OnInit} from '@angular/core';
+import {ActivityType} from "../../models/app.model";
 import {AppManager} from "../../managers/app.manager";
 
 @Component({
@@ -9,13 +9,17 @@ import {AppManager} from "../../managers/app.manager";
 })
 export class UserInfoComponent implements OnInit {
 
-  constructor(private appManager: AppManager) { }
+  ActivityType = ActivityType;
+  activityType: ActivityType = ActivityType.DAILY;
+
+  constructor(private appManager: AppManager) {
+  }
 
   ngOnInit(): void {
   }
-  activityType: number = activityType.daily;
 
-  changeActivityView(activityType: number) {
+
+  changeActivityView(activityType: ActivityType) {
     this.activityType = activityType;
     this.appManager.changeActivityMode(this.activityType);
   }
